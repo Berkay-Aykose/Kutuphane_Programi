@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Kitap Güncelle";
+    int sayac = 0;
+}
+@using KutuphaneProgrami.Data.Model
+@model Kitap
+<h2 style="text-align:center">KİTAP GÜNCELLE</h2>
+<form action="#">
+    <!--  Kategori Ekle< -->
+    <div class="form-group">
+        <h4>Kategori Ekle</h4>
+        <div>
+            <select class="form_control" id="kategoriler">
+                @foreach (var kategori in ViewBag.Kategoriler)
+                {
+                    sayac = 0;
+                    foreach (var eklenmisKategori in Model.Kategoriler)
+                    {
+                        if (kategori.Id != eklenmisKategori.Id)
+                        {
+                            if (sayac < Model.Kategoriler.Count - 1)
+                            {
+                                sayac++;
+                            }
+                            else
+                            {
+                                <option data-id="@kategori.Id">@kategori.Ad</option>
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+            </select>
+        </div>
+        <div>
+            <input type="button" id="kategoriEkle" value="Ekle">
+        </div>
+        <div id="eklenenKategoriler" style="margin-right: 2px; margin-bottom: 2px">
+            <label>Kategoriler</label>
+        </div>
+    </div>
+    <!--  Yazar Ekle -->
+    <div class="form-group">
+        <h4>Yazar Ekle</h4>
+        <div>
+            <select class="form_control" id="yazar">
+                @foreach (var yazar in ViewBag.Yazarlar)
+                {
+                    if (Model.Yazar.Id == yazar.Id)
+                    {
+                        <option data-id="@yazar.Id" selected>@yazar.Ad</option>
+                    }
+                    else
+                    {
+                        <option data-id="@yazar.Id">@yazar.Ad</option>
+                    }
+                }
+            </select>
+        </div>
+    </div>
+    <!--  Kitap Adı -->
+    <div class="form-group">
+        <h4>Kitap Adı</h4>
+        <div>
+            <input id="kitapAd" type="text" placeholder="Kitap Adı Giriniz" value="@Model.Ad">
+        </div>
+    </div>
+    <!--  Adet -->
+    <div class="form-group">
+        <h4>Adet</h4>
+        <div>
+            <input id="kitapAdet" type="text" placeholder="Adet Giriniz" value="@Model.Adet">
+        </div>
+    </div>
+    <!--  Sıra No -->
+    <div class="form-group">
+        <h4>Sıra No</h4>
+        <div>
+            <input id="siraNo" type="text" placeholder="Sıra No Giriniz" value="@Model.SiraNo">
+        </div>
+    </div>
+    <!--  kaydet -->
+    <div class="form-group">
+        <div class="controls">
+            <input type="button" id="kitapGüncelle" value="Güncelle" data-id="@Model.Id">
+        </div>
+    </div>
+</form>
+

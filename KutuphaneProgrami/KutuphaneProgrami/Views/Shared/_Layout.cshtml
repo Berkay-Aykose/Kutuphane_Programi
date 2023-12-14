@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/Css/Style_Layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="~/Content/Css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/Css/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/Content/Css/sweetalert2.css" rel="stylesheet" />
+    <style>
+        tfoot input {
+            width: 100%;
+            padding: 3px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <!--Side navbar -->
+        <div id="sidebar">
+
+            <header>
+                <a href="#"><b>sol üst köşe</b></a>
+            </header>
+
+            <!--yan büyük kısım başlangıç-->
+
+            <div class="solNav">
+
+                <!--Kategori sınıfı ve alt başlıkları-->
+                <a><i class="fa-solid fa-envelope-open-text"></i>&nbsp;&nbsp;&nbsp;KATEGORİLER</a>
+                <ul>
+                    <li>
+                        <a class="ktgEkle" href="javascript:void(0)">Kategori Ekle</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","Kategori")">Listele</a>
+                    </li>
+                </ul>
+                <!--Yazarlar sınıfı ve alt başlıkları-->
+                <a><i class="fa-solid fa-pen-nib"></i>&nbsp;&nbsp;&nbsp;YAZARLAR</a>
+                <ul>
+                    <li>
+                        <a class="yazarEkle" href="javascript:void(0)">Yazar Ekle</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","Yazar")">Listele</a>
+                    </li>
+                </ul>
+                <!--Kitap sınıfı ve alt başlıkları-->
+                <a><i class="fa-solid fa-book"></i>&nbsp;&nbsp;&nbsp;KİTAPLAR</a>
+                <ul>
+                    <li>
+                        <a class="kitapEkle" href="@Url.Action("Ekle","Kitap")">Kitap Ekle</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","Kitap")">Listele</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("VerilenKitap","OduncKitap")">Ödünç Alınan Kitaplar</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("TeslimEdilenKitap","OduncKitap")">Teslim Edilen Kitaplar</a>
+                    </li>
+                </ul>
+                <!--Üyeler sınıfı ve alt başlıkları-->
+                <a><i class="fa-regular fa-user"></i>&nbsp;&nbsp;&nbsp;ÜYELER</a>
+                <ul>
+                    <li>
+                        <a class="uyEkle" href="@Url.Action("Ekle","Uye")">Üye Ekle</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","Uye")">Listele</a>
+                    </li>
+                </ul>
+                <!--Üyelik işlemleri-->
+                <a href="@Url.Action("Index","Uyelik")"><i class="fa-solid fa-stopwatch"></i>&nbsp;&nbsp;&nbsp;ÜYELİK İŞLEMLERİ</a>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--yan büyük kısım bitiş-->
+    <!--üst bar başlangıç-->
+    <div class="nav">
+
+        <div class="nav-links">
+            <a href="#" target="_blank">y</a>
+            <a href="#" target="_blank"></a>
+            <a href="#" target="_blank">Kullanıcı Bilgileri</a>
+            <a href="#" target="_blank">Çıkış</a>
+        </div>
+    </div>
+    <!--üst bar bitiş-->
+
+    <div class="content">
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script>
+        new DataTable('#example', {
+            initComplete: function () {
+                this.api()
+                    .columns()
+                    .every(function () {
+                        let column = this;
+                        let title = column.footer().textContent;
+
+                        // Create input element
+                        let input = document.createElement('input');
+                        input.placeholder = title;
+                        column.footer().replaceChildren(input);
+
+                        // Event listener for user input
+                        input.addEventListener('keyup', () => {
+                            if (column.search() !== this.value) {
+                                column.search(input.value).draw();
+                            }
+                        });
+                    });
+            }
+        });
+    </script>
+    <script src="~/Scripts/Main.js"></script>
+    <script src="~/Scripts/sweetalert2.all.js"></script>
+    <script src="~/Scripts/sweetalert2.all.min.js"></script>
+    <script src="~/Scripts/sweetalert2.js"></script>
+    <script src="~/Scripts/sweetalert2.min.js"></script>
+
+</body>
+</html>

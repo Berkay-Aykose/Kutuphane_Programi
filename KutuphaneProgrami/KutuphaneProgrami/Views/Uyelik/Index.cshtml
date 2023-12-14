@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Üyelik";
+}
+@using KutuphaneProgrami.Data.Model;
+@model List<Uye>
+
+<h2>ÜYELİLK</h2>
+<a href="@Url.Action("EkleUyelik","Uyelik")"
+   style="background-color: #009DF1; color: white; border: 2px solid #555; text-decoration: none; float: right; margin:5px;"
+   class="btn_ekle">
+    Ekle
+</a>
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Ad Soyad</th>
+            <th>Mail</th>
+            <th>Yetki</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var uyeler in Model)
+        {
+            <tr>
+                <td>@uyeler.Ad @uyeler.Soyad</td>
+                <td>@uyeler.Mail</td>
+                <td>@uyeler.Yetki</td>
+                <td>
+                    <button value="@uyeler.Id"
+                            class="guncelle"
+                            style="background-color: #009DF1; color: white">
+                        Güncelle
+                    </button>
+                </td>
+                <td>
+                    <button value="@uyeler.Id"
+                            class="sil"
+                            style="background-color:red; color: white">
+                        sil
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Ad Soyad</th>
+            <th>Mail</th>
+            <th>Yetki</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </tfoot>
+</table>

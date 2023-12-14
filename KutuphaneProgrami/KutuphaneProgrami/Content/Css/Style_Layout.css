@@ -1,0 +1,116 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+body {
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: 0px;
+    font-family: 'segoe ui';
+    box-sizing: border-box;
+}
+ 
+/*******************************************************************************************************************/ 
+
+/*sol üst köşe*/
+#container {
+    padding-left: 250px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#content {
+    width: 100%;
+    position: relative;
+    margin-right: 0;
+}
+
+#sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #062e51;
+    overflow-x: hidden;
+}
+
+#sidebar header {
+    background-color: #062e51;
+    font-size: 20px;
+    line-height: 52px;
+    text-align: center;
+}
+
+#sidebar header a {
+    color: #fff;
+    display: block; /*kutu şeklinde alan kaplar */
+    text-decoration: none;
+}
+
+#sidebar header a:hover {
+    color: yellow;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/*******************************************************************************************************************/ 
+/*sol yan navbar*/
+
+ul li a {
+    list-style-type: none none;
+    padding-left: 0;
+}
+
+#sidebar .solNav a {
+    background: none;
+    border-bottom: 1px solid #062e51;
+    color: #fff;
+    font-size: 14px;
+    padding: 16px 24px;
+    text-decoration: none;
+}
+
+#sidebar .solNav a:hover {
+    background: none;
+    color: yellow;
+}
+/*
+ #sidebar .solNav a i {
+    margin-right: 16px;
+}
+*/
+
+/*******************************************************************************************************************/ 
+
+/*üst navbar*/
+.nav {
+    height: 50px;
+    width: 100%;
+    background-color: #062e51;
+    position: relative;
+}
+
+.nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+}
+
+.nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav > .nav-links > a:hover {
+    color: yellow;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.content {
+    margin-left: 200px;
+    padding-left: 20px;
+}

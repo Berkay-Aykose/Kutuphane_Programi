@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Uyelik Ekle";
+}
+@using KutuphaneProgrami.Data.Model;
+@model List<Uye>
+
+<h2 style="text-align:center">UYELİK EKLE</h2>
+
+<form action="#">
+    <!-- Adı -->
+    <div class="form-group">
+        <h4>Ad Soyad</h4>
+        <div>
+            <select id="uyeId">
+                @foreach (var uyeler in Model)
+                 {
+                    <option data-id="@uyeler.Id">@uyeler.Ad @uyeler.Soyad</option>
+                 }
+            </select>
+        </div>
+    </div>
+    <!--  mail -->
+    <div class="form-group">
+        <h4>Mail</h4>
+        <div>
+            <input id="Mail" type="text" placeholder="Mail Giriniz">
+        </div>
+    </div>
+    <!--  Parola -->
+    <div class="form-group">
+        <h4>Parola</h4>
+        <div>
+            <input id="parola" type="password" placeholder="Parolanızı Giriniz">
+        </div>
+    </div>
+    <!--  Parola -->
+    <div class="form-group">
+        <h4>Parola(Tekrar)</h4>
+        <div>
+            <input id="parolaTekrar" type="password" placeholder="Parolanızı Tekrar Giriniz">
+        </div>
+    </div>
+    <!--  KAYDET -->
+    <div class="form-group">
+        <div class="controls">
+            <input type="button" id="uyelikEkle" value="Ekle">
+        </div>
+    </div>
+</form>
+
+
+

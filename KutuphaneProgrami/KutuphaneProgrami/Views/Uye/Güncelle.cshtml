@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Uye Güncelle";
+}
+
+<h2 style="text-align:center">Üye GÜNCELLE</h2>
+
+<form action="#">
+    <!-- Adı -->
+    <div class="form-group">
+        <h4>Adı</h4>
+        <div>
+            <input id="Ad" type="text" placeholder="Adınızı Giriniz" value="@Model.Ad">
+        </div>
+    </div>
+    <!--  Soyad -->
+    <div class="form-group">
+        <h4>Soyad</h4>
+        <div>
+            <input id="Soyad" type="text" placeholder="Soyadınızı Giriniz" value="@Model.Soyad">
+        </div>
+    </div>
+    <!-- Tc -->
+    <div class="form-group">
+        <h4>Tc Kimlik No</h4>
+        <div>
+            <input id="Tc" type="text" placeholder="Tc Kimlik No Giriniz" value="@Model.Tc">
+        </div>
+    </div>
+    <!-- Tel -->
+    <div class="form-group">
+        <h4>Tel</h4>
+        <div>
+            <input id="Tel" type="text" placeholder="Telefon Numaranızı Giriniz" value="@Model.Tel">
+        </div>
+    </div>
+    <!--  KAYDET -->
+    <div class="form-group">
+        <div class="controls">
+            <input type="button" id="uyeGüncelle" value="Güncelle" data-id="@Model.Id">
+        </div>
+    </div>
+</form>
+

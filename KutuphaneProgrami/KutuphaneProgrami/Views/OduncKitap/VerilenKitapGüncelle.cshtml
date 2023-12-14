@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Verilen Kitapları Güncelle";
+}
+@using KutuphaneProgrami.Data.Model;
+@model OduncKitap
+
+<h2 style="text-align:center">VERİLEN KİTAPLARI GÜNCELLE</h2>
+
+<form action="#">
+    <!-- Üyeler -->
+    <div class="form-group">
+        <h4>Üyeler</h4>
+        <div>
+            <select class="form_control" id="uyeGncId">
+                @foreach (var uye in ViewBag.Uyeler)
+                {
+                    <option data-id="@uye.Id">@uye.Ad</option>
+                }
+            </select>
+        </div>
+    </div>
+    <!--  Getireceği Tarih -->
+    <div class="form-group">
+        <h4>Getireceği Tarih</h4>
+        <div>
+            <input id="getirecegiTarih" type="date" min="@DateTime.Now.ToString("yyy-MM-dd")">
+        </div>
+    </div>
+    <!--  kaydet -->
+    <div class="form-group">
+        <div class="controls" style="margin: 5px;">
+            <input type="button" id="kitapGüncelle" value="Güncelle">
+        </div>
+    </div>
+</form>

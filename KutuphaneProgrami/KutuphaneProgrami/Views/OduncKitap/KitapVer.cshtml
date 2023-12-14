@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Kitap Ver";
+}
+
+<h2 style="text-align:center">KİTAP VER</h2>
+
+<form action="#">
+    <!-- Üyeler -->
+    <div class="form-group">
+        <h4>Üyeler</h4>
+        <div>
+            <select class="form_control" id="uyeId">
+                @foreach (var uye in ViewBag.Uyeler)
+                {
+                    <option data-id="@uye.Id">@uye.Ad</option>
+                }
+            </select>
+        </div>
+    </div>
+    <!--  Getireceği Tarih -->
+    <div class="form-group">
+        <h4>Getireceği Tarih</h4>
+        <div>
+            <input id="getirecegiTarih" type="date" min="@DateTime.Now.ToString("yyy-MM-dd")">
+        </div>
+    </div>
+    <!--  kaydet -->
+    <div class="form-group">
+        <div class="controls" style="margin: 5px;">
+            <input type="button" id="kitapVer" value="Kaydet">
+        </div>
+    </div>
+</form>

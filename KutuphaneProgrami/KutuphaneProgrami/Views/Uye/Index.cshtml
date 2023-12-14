@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Üyeler";
+}
+@using KutuphaneProgrami.Data.Model;
+@model List<Uye>
+
+
+<h2>ÜYELER</h2>
+
+<table id="example" class="display" style="width:100%">
+
+
+
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Tc</th>
+            <th>Telefon Numarası</th>
+            <th>Kayıt Tarihi</th>
+            <th>Ceza</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var uye in Model)
+        {
+            <tr>
+                <td>@uye.Ad</td>
+                <td>@uye.Soyad</td>
+                <td>@uye.Tc</td>
+                <td>@uye.Tel</td>
+                <td>@uye.KayiTarihi</td>
+                <td>@uye.Ceza</td>
+                <td>
+                    <a href="@Url.Action("Güncelle","Uye", new {uyeId = uye.Id})"
+                       class="uye_guncelle"
+                       style="background-color: #009DF1; color: white; border: 2px solid #555; text-decoration: none;">
+                        Güncelle
+                    </a>
+                </td>
+                <td>
+                    <button value="@uye.Id"
+                            class="uye_sil"
+                            style="background-color:red; color: white">
+                        sil
+                    </button>
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Tc</th>
+            <th>Telefon Numarası</th>
+            <th>Kayıt Tarihi</th>
+            <th>Ceza</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </tfoot>
+</table>

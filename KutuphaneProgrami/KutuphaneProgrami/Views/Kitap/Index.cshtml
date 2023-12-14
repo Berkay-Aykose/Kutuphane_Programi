@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Kitaplar";
+}
+@using KutuphaneProgrami.Data.Model;
+@model List<Kitap>
+
+
+<h2>KİTAPLAR</h2>
+
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Sıra No</th>
+            <th>Kategori</th>
+            <th>Kitap Adı</th>
+            <th>Adet</th>
+            <th>Yazar</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kitap in Model)
+        {
+            string kategoriler = "";
+            <tr>
+                <td>@kitap.SiraNo</td>
+                <td>
+                    @foreach (var kategori in kitap.Kategoriler)
+                    {
+                        kategoriler += kategori.Ad + ",";
+                    }
+                    @kategoriler
+                </td>
+                <td>@kitap.Ad</td>
+                <td>@kitap.Adet</td>
+                <td>@kitap.Yazar.Ad</td>
+                <td>
+                    <a href="@Url.Action("Güncelle", "Kitap",new{kitapId = kitap.Id})"
+                            class="ktp_guncelle"
+                            style="background-color: #009DF1; color: white; border: 2px solid #555; text-decoration: none;">
+                        Güncelle
+                    </a>
+                </td>
+                <td>
+                    <button value="@kitap.Id"
+                            class="ktp_sil"
+                            style="background-color:red; color: white">
+                        sil
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Sıra No</th>
+            <th>Kategori</th>
+            <th>Kitap Adı</th>
+            <th>Adet</th>
+            <th>Yazar</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </tfoot>
+</table>

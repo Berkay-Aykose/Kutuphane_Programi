@@ -1,0 +1,15 @@
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\bin\Debug\KutuphaneProgrami.Data.dll.config
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\bin\Debug\KutuphaneProgrami.Data.dll
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\bin\Debug\KutuphaneProgrami.Data.pdb
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\bin\Debug\EntityFramework.dll
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\bin\Debug\KutuphaneProgrami.Data.Model.dll
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\bin\Debug\KutuphaneProgrami.Data.Model.pdb
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\bin\Debug\KutuphaneProgrami.Data.Model.dll.config
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\bin\Debug\EntityFramework.xml
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\obj\Debug\KutuphaneProgrami.Data.csproj.AssemblyReference.cache
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\obj\Debug\KutuphaneProgrami.Data.csproj.CoreCompileInputs.cache
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\obj\Debug\KutuphaneProgrami.Data.csproj.CopyComplete
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\obj\Debug\KutuphaneProgrami.Data.dll
+C:\Users\berka\OneDrive\Masaüstü\KutuphaneProgrami\KutuphaneProgrami.Data\obj\Debug\KutuphaneProgrami.Data.pdb

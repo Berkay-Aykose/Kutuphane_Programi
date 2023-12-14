@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Teslim Edilen Kitaplar";
+    DateTime getirdigiTarih;
+}
+@using KutuphaneProgrami.Data.Model;
+@model List<OduncKitap>
+
+
+<h2>TESLİM EDİLEN KİTAPLAR</h2>
+
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Kitap Alan Üye</th>
+            <th>Aldığı Tarih</th>
+            <th>Getireceği Tarih</th>
+            <th>Getirdiği Tarih</th>          
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var oduncKtp in Model)
+        {
+            getirdigiTarih = Convert.ToDateTime(oduncKtp.GetirdigiTarih);
+            <tr>
+                <td>@oduncKtp.Uye.Ad</td>
+                <td>@oduncKtp.AlisTarihi.ToString("dddd, dd MMMM yyyy")</td>
+                <td>@oduncKtp.GetirecegiTarih.ToString("dddd, dd MMMM yyyy")</td>
+                <td>@getirdigiTarih.ToString("dddd, dd MMMM yyyy")</td>
+            </tr>
+
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Kitap Alan Üye</th>
+            <th>Aldığı Tarih</th>
+            <th>Getireceği Tarih</th>
+            <th>Getirdiği Tarih</th>
+        </tr>
+    </tfoot>
+</table>
